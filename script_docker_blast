@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Ingresar al directorio de trabajo
-
+#Este script está adapatado a las rutas de mi computadora, por lo que para correrlo en tu computadora debes de cambiar las rutas.
 cd /home/melisa/Escritorio/zebrafish
 
 #bajar e instalar blast desde la imagen de biocontainers
