@@ -32,5 +32,3 @@ docker run -v $ruta:/data/ biocontainers/blast makeblastdb -in zebrafish.1.prote
 #Hacer los alineamientos finales
 
 docker run -v $ruta:/data/ biocontainers/blast blastp -query P04156.fasta -db zebrafish.1.protein.faa -out results.txt
-;
-done
