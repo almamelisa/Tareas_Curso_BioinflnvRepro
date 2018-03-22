@@ -2,7 +2,10 @@
 
 #Ingresar al directorio de trabajo
 #Este script está adapatado a las rutas de mi computadora, por lo que para correrlo en tu computadora debes de cambiar las rutas.
-cd /home/melisa/Escritorio/zebrafish
+
+ruta=/home/melisa/Escritorio/zebrafish
+
+cd $ruta
 
 #bajar e instalar blast desde la imagen de biocontainers
 
@@ -24,10 +27,10 @@ gunzip zebrafish.1.protein.faa.gz
 
 #Vincular(montar) el directorio de trabajo al contenedor, y preparar la base de datos del pez zebra la búsqueda con el comando makeblastdb
 
-docker run -v /home/melisa/Escritorio/zebrafish:/data/ biocontainers/blast makeblastdb -in zebrafish.1.protein.faa -dbtype prot
+docker run -v $ruta:/data/ biocontainers/blast makeblastdb -in zebrafish.1.protein.faa -dbtype prot
 
 #Hacer los alineamientos finales
 
-docker run -v /home/melisa/Escritorio/zebrafish:/data/ biocontainers/blast blastp -query P04156.fasta -db zebrafish.1.protein.faa -out results.txt
-
+docker run -v $ruta:/data/ biocontainers/blast blastp -query P04156.fasta -db zebrafish.1.protein.faa -out results.txt
+;
 done
